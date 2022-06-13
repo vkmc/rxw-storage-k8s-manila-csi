@@ -1,0 +1,24 @@
+apiVersion: v1
+items:
+- apiVersion: storage.k8s.io/v1
+  kind: StorageClass
+  metadata:
+    creationTimestamp: "2022-05-24T15:54:20Z"
+    name: csi-manila-default
+    resourceVersion: "6731"
+    uid: d147900b-386d-4be4-bd01-d6fc82e75535
+  parameters:
+    csi.storage.k8s.io/node-publish-secret-name: csi-manila-secrets
+    csi.storage.k8s.io/node-publish-secret-namespace: openshift-manila-csi-driver
+    csi.storage.k8s.io/node-stage-secret-name: csi-manila-secrets
+    csi.storage.k8s.io/node-stage-secret-namespace: openshift-manila-csi-driver
+    csi.storage.k8s.io/provisioner-secret-name: csi-manila-secrets
+    csi.storage.k8s.io/provisioner-secret-namespace: openshift-manila-csi-driver
+    type: default
+  provisioner: manila.csi.openstack.org
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
